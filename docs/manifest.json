@@ -1,0 +1,46 @@
+{
+    "name": "Orðla",
+    "short_name": "Orðla",
+    "start_url": "https://ordla.us/",
+    "theme_color": "#6aaa64",
+    "background_color": "#e6e6e6",
+    "description": "Hversdagslegur orðaleikur",
+    "display": "standalone",
+    "icons": [
+        {
+            "sizes": "48x48",
+            "src": "/logo_48x48.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "72x72",
+            "src": "/logo_72x72.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "96x96",
+            "src": "/logo_96x96.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "144x144",
+            "src": "/logo_144x144.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "168x168",
+            "src": "/logo_168x168.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "192x192",
+            "src": "/logo_192x192.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "512x512",
+            "src": "/logo_512x512.png",
+            "type": "image/png"
+        }
+    ]
+}
