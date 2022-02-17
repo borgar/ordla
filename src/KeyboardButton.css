@@ -1,0 +1,66 @@
+.key {
+  display: inline-block;
+  border: none;
+  background: var(--keycolor);
+  margin: 4px 3px;
+  font-size: 17px;
+  font-weight: bold;
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: 9%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: box-shadow .2s, background .4s, color .4s;
+}
+
+.special {
+  max-width: 70px;
+}
+
+@media (max-width: 520px) {
+  .key {
+    margin: 1px 1px;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .key {
+    font-size: 12px;
+    margin: 1px 1px;
+    border-radius: 0;
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+.given {
+  /* FIXME: have not found a good style for this yet */
+  background: var(--absent-color);
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--keycolor-dark),
+    var(--keycolor-dark) 5px,
+    var(--absent-color) 5px,
+    var(--absent-color) 10px
+  );
+  color: white;
+}
+
+.correct {
+  background: var(--correct-color);
+  color: white;
+}
+
+.present {
+  background: var(--present-color);
+  color: white;
+}
+
+.absent {
+  background: var(--absent-color);
+  color: white;
+}

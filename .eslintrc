@@ -1,0 +1,25 @@
+{
+  "parser": "@babel/eslint-parser",
+  "extends": [
+    "@borgar/eslint-config",
+    "@borgar/eslint-config/react"
+  ],
+  "rules": {
+    "import/export": "error",
+    "import/no-unresolved": "error"
+  },
+  "plugins": [
+    "import"
+  ],
+  "globals": {
+    "Promise": "readonly",
+    "Set": "readonly",
+    "Map": "readonly"
+  },
+  "settings": {
+    "import/resolver": "webpack",
+    "react": {
+      "version": "detect"
+    }
+  }
+}

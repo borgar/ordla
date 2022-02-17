@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  border-bottom: 1px solid var(--hr-color);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  user-select: none;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 30x;
+  flex: 1 1 auto;
+  letter-spacing: 1px;
+}
+
+.header h1 span {
+  opacity: .2;
+  font-size: .8em;
+}
+
+@media (max-width: 520px) {
+  .header {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .header h1 {
+    letter-spacing: 0px;
+    font-size: 24px;
+  }
+}
+
+.button {
+  display: inline-block;
+  margin: 0 0 0 10px;
+  border: none;
+  font-size: 20px;
+  line-height: 30x;
+  height: 30x;
+  width: 30px;
+  padding: 0;
+  color: var(--button-color);
+  cursor: pointer;
+  background: transparent;
+}
+

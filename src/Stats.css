@@ -1,0 +1,108 @@
+.stats {
+  padding: 15px 30px;
+}
+
+.stats h2 {
+  margin: 0 0 20px 0;
+  font-size: 1em;
+}
+
+.kpis {
+  margin: 0 0 30px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+.kpi {
+  display: inline-block;
+  text-align: center;
+}
+.kpi label {
+  display: block;
+  font-size: .9rem;
+  padding-bottom: 6px;
+}
+.kpi output {
+  display: block;
+  font-size: 2rem;
+}
+
+.histogram {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+.histogram th {
+  width: 10%;
+  text-align: right;
+  padding: 0 10px;
+}
+.histogram td {
+  padding: 1px;
+  display: flex;
+}
+.bar {
+  height: 24px;
+  background: var(--bar-color);
+  color: white;
+  text-align: right;
+}
+.bar.highlight {
+  background: var(--bar-color-highlight);
+  color: white;
+}
+.barlabel {
+  line-height: 24px;
+  font-weight: bold;
+  font-size: .9rem;
+  display: inline-block;
+  padding: 0 8px;
+}
+
+.foot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.next {
+  border-right: 1px solid var(--hr-color);
+  padding: 10px;
+}
+.next h3 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1rem;
+}
+.next time {
+  font-size: 2rem;
+}
+
+.share {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.share button {
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--bar-color-highlight);
+  display: flex;
+  color: white;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  padding: 10px 20px;
+  line-height: 20px;
+}
+.share button[disabled] {
+  background: var(--gray);
+  cursor: not-allowed;
+  opacity: .7;
+}
+.share span {
+  padding-right: 10px;
+}

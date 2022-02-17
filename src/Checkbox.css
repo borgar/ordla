@@ -1,0 +1,60 @@
+.checkbox {
+  display: inline-block;
+  cursor: pointer;
+  color: #888;
+  user-select: none;
+}
+
+.toggle {
+  display: inline-block;
+  position: relative;
+  height: 20px;
+  width: 40px;
+  background: var(--toggle-off-background);
+  border-radius: 10px;
+  transition: background .4s;
+}
+
+.knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 16px;
+  width: 16px;
+  background: var(--toggle-off-color);
+  border-radius: 8px;
+  transition: left .15s, background .4s;
+}
+
+.checked .toggle {
+  background: var(--toggle-on-background);
+}
+
+.checked .knob {
+  left: 22px;
+  background: var(--toggle-on-color);
+}
+
+.disabled .toggle {
+  background: var(--toggle-off-background);
+  opacity: .5;
+}
+
+.disabled .knob {
+  left: 22px;
+  background: var(--toggle-off-color);
+  opacity: .5;
+}
+
+.glyph {
+  position: absolute;
+  top: 0;
+  left: 6px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--toggle-on-color);
+}
+
+.disabled .glyph {
+  opacity: .5;
+}

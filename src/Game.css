@@ -1,0 +1,93 @@
+body {
+  font-size: 20px;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  background: #e6e6e6;
+  color: #000;
+  transition: background .3s, color .3s;
+}
+
+a {
+  color: currentColor;
+}
+
+:root {
+  --green: #6aaa64;
+  --yellow: #c9b458;
+  --gray: #666666;
+  --orange: #f5793a;
+  --blue: #85c0f9;
+
+  --modal-color: #000;
+  --modal-background: #fff;
+  --keycolor: #ccc;
+  --keycolor-dark: #808080;
+  --tile-background: #f0f0f0;
+  --tile-border: #ccc;
+  --tile-border-dark: #999;
+  --hr-color: #ccc;
+  --button-color: #999;
+  --bar-color: var(--gray);
+  --bar-color-highlight: var(--green);
+
+  --toggle-off-background: #999;
+  --toggle-off-color: #fff;
+  --toggle-on-background: var(--green);
+  --toggle-on-color: #fff;
+}
+
+body.darkMode {
+  background: #111;
+  color: #eee;
+
+  --green: #5b9256;
+  --yellow: #b3a04e;
+  --gray: #3a3a3a;
+  --orange: #c35f2d;
+  --blue: #6796c1;
+
+  --modal-color: #ddd;
+  --modal-background: #202020;
+  --keycolor: #808080;
+  --keycolor-dark: #505050;
+  --tile-background: #111;
+  --tile-border: #333;
+  --tile-border-dark: #666;
+  --hr-color: #444;
+  --button-color: #666;
+  --bar-color: #555;
+  --bar-color-highlight: var(--green);
+
+  --toggle-off-background: #444;
+  --toggle-on-background: var(--green);
+}
+
+.game {
+  padding: 10px 0;
+  margin: 0 auto;
+  max-width: 500px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: unset;
+  --correct-color: var(--green);
+  --present-color: var(--yellow);
+  --absent-color: var(--gray);
+}
+
+.colorblind {
+  --correct-color: var(--orange);
+  --present-color: var(--blue);
+  --bar-color-highlight: var(--orange);
+  --toggle-on-background: var(--orange);
+}
+
+@media (max-width: 400px) {
+  .game {
+    padding-bottom: 0;
+  }
+}
+

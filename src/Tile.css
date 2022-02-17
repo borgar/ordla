@@ -1,0 +1,80 @@
+.tile {
+  display: block;
+  border: 2px solid var(--tile-border);
+  margin: 2px;
+  box-sizing: border-box;
+  background: var(--tile-background);
+  font-family: sans-serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: calc(var(--tile-size) * 0.6);
+  width: var(--tile-size);
+  height: var(--tile-size);
+  line-height: var(--tile-size);
+}
+
+@keyframes fillKey {
+  from {
+    transform-origin: center;
+    transform: scale(1.15);
+  }
+  to {
+    transform-origin: center;
+    transform: scale(1);
+  }
+}
+
+.filled {
+  border-color: var(--tile-border-dark);
+  animation-name: fillKey;
+  animation-duration: .2s;
+}
+
+@keyframes flipStart {
+  from {
+    transform-origin: center;
+    transform: rotateY(0);
+  }
+  to {
+    transform-origin: center;
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes flipEnd {
+  from {
+    transform-origin: center;
+    transform: rotateY(90deg);
+  }
+  to {
+    transform-origin: center;
+    transform: rotateY(0);
+  }
+}
+
+.locked {
+  animation-name: flipStart;
+  animation-duration: .4s;
+}
+.exposed {
+  animation-name: flipEnd;
+  animation-duration: .4s;
+}
+
+.exposed.correct {
+  background: var(--correct-color);
+  border-color: var(--correct-color);
+  color: white;
+}
+
+.exposed.present {
+  background: var(--present-color);
+  border-color: var(--present-color);
+  color: white;
+}
+
+.exposed.absent {
+  background: var(--absent-color);
+  border-color: var(--absent-color);
+  color: white;
+}

@@ -1,0 +1,46 @@
+.help {
+  padding: 15px 30px;
+  font-size: 18px;
+}
+
+.help h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+
+.help em {
+  font-style: normal;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+.tile {
+  border: 1px solid #888;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px;
+  margin-right: 4px;
+}
+
+.correct {
+  background: var(--correct-color);
+  border-color: var(--correct-color);
+  color: white;
+}
+
+.present {
+  background: var(--present-color);
+  border-color: var(--present-color);
+  color: white;
+}
+
+.absent {
+  background: var(--absent-color);
+  border-color: var(--absent-color);
+  color: white;
+}

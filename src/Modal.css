@@ -1,0 +1,43 @@
+.overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: rgba(0,0,0,.1);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(1px);
+}
+
+.content {
+  max-width: 500%;
+  position: relative;
+  border-radius: 4px;
+  background: var(--modal-background);
+  color: var(--modal-color);
+  box-shadow: 0 4px 23px 0 rgb(0 0 0 / 20%);
+  width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  max-width: 500px;
+  padding: 10px 8px 13px 8px;
+  box-sizing: border-box;
+  min-height: 200px;
+}
+
+.close {
+  user-select: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  opacity: .6;
+}
+
+.close:hover {
+  opacity: 1;
+}
