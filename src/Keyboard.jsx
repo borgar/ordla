@@ -79,7 +79,7 @@ export default class Keyboard extends React.PureComponent {
             className={css.handicapButton}
             onClick={onHandicap}
             >
-            Afhjúpa 6 ónotaða stafi
+            Afhjúpa 6 ónothæfa stafi
           </span>
         )}
         {this.getButtonLayout().map((r, i) => (

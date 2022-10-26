@@ -78,7 +78,7 @@ export default class Settings extends React.PureComponent {
           inProgress: true
         })}
         {this.renderSetting({
-          label: 'Fjögura raða lyklaborð',
+          label: 'Fjögurra raða lyklaborð',
           id: 'keys4',
           help: 'Lyklaborðið notar meira skjápláss en stafir eru stærri.',
           inProgress: true
