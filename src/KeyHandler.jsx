@@ -2,27 +2,30 @@
 import { useEffect } from 'react';
 
 const codeToKey = {
-  32: ' ',
-  8: 'backspace',
-  9: 'tab',
-  13: 'enter',
-  16: 'shift',
-  17: 'CONTROL',
-  18: 'ALT',
-  20: 'capslock',
-  27: 'escape',
-  33: 'pageup',
-  34: 'pagedown',
-  35: 'end',
-  36: 'home',
-  37: 'left',
-  38: 'up',
-  39: 'right',
-  40: 'down',
-  46: 'delete',
-  91: 'META', // command
-  93: 'META', // command (right)
-  192: '°'
+  Space: ' ',
+  Backspace: 'backspace',
+  Tab: 'tab',
+  Enter: 'enter',
+  ShiftLeft: 'shift',
+  ShiftRight: 'shift',
+  ControlLeft: 'CONTROL',
+  ControlRight: 'CONTROL',
+  AltLeft: 'ALT',
+  AltRight: 'ALT',
+  CapsLock: 'capslock',
+  Escape: 'escape',
+  PageUp: 'pageup',
+  PageDown: 'pagedown',
+  End: 'end',
+  Home: 'home',
+  ArrowLeft: 'left',
+  ArrowUp: 'up',
+  ArrowRight: 'right',
+  ArrowDown: 'down',
+  Delete: 'delete',
+  ContextMenu: 'CONTEXTMENU',
+  MetaRight: 'META', // command
+  MetaLeft: 'META' // command
 };
 
 let nextAccent = null;
@@ -46,19 +49,19 @@ const KeyHandler = props => {
 
   useEffect(() => {
     const keyPressHandler = e => {
-      const code = e.keyCode;
+      const code = e.code;
       let key = null;
       if (code in codeToKey) {
         e.preventDefault();
         key = codeToKey[code];
       }
-      else if (code === 222) {
-        // next char should have an acute accent (if possible)
-        nextAccent = '´';
-      }
-      else if (code === 187) {
+      else if (code === 'backquote' || e.keyCode === 187) {
         // next char should have a grave accent (if possible)
         nextAccent = '`';
+      }
+      else if (code === 'quote' || e.keyCode === 222) {
+        // next char should have an acute accent (if possible)
+        nextAccent = '´';
       }
       else {
         const char = e.key.toUpperCase();
@@ -73,7 +76,7 @@ const KeyHandler = props => {
         }
         nextAccent = null;
       }
-      if (key && onKey) {
+      if (e.key !== 'Dead' && onKey) {
         onKey({
           key: key,
           shift: e.shiftKey,
