@@ -50,16 +50,17 @@ const KeyHandler = props => {
   useEffect(() => {
     const keyPressHandler = e => {
       const code = e.code;
+      const dead = e.key.toLowerCase() === 'dead';
       let key = null;
       if (code in codeToKey) {
         e.preventDefault();
         key = codeToKey[code];
       }
-      else if (code === 'backquote' || e.keyCode === 187) {
+      else if (dead && (code === 'backquote' || e.keyCode === 187)) {
         // next char should have a grave accent (if possible)
         nextAccent = '`';
       }
-      else if (code === 'quote' || e.keyCode === 222) {
+      else if (dead && (code === 'quote' || e.keyCode === 222)) {
         // next char should have an acute accent (if possible)
         nextAccent = '´';
       }
@@ -76,7 +77,7 @@ const KeyHandler = props => {
         }
         nextAccent = null;
       }
-      if (e.key !== 'Dead' && onKey) {
+      if (!dead && onKey) {
         onKey({
           key: key,
           shift: e.shiftKey,
