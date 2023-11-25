@@ -11,11 +11,16 @@
   margin: 0 0 30px 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 15px;
+  column-gap: 15px;
 }
 .kpi {
-  display: inline-block;
+  display: block;
   text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 .kpi label {
   display: block;
@@ -61,12 +66,11 @@
 
 .foot {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1px 1fr;
   text-align: center;
 }
 
 .next {
-  border-right: 1px solid var(--hr-color);
   padding: 10px;
 }
 .next h3 {
@@ -76,6 +80,12 @@
 }
 .next time {
   font-size: 2rem;
+}
+
+.divider {
+  height: 100%;
+  width: 1px;
+  border-right: 1px solid var(--hr-color);
 }
 
 .share {
@@ -105,4 +115,23 @@
 }
 .share span {
   padding-right: 10px;
+}
+
+
+@media (max-width: 400px) {
+  .foot {
+    column-gap: 15px;
+  }
+  .next time {
+    font-size: 1.5rem;
+  }
+  .share button {
+    font-size: 17px;
+    padding: 6px 10px;
+    line-height: 17px;
+  }
+  .share,
+  .next {
+    padding: 0;
+  }
 }

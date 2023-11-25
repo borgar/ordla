@@ -139,6 +139,7 @@ export default class Stats extends React.PureComponent {
             <h3>Næsta Orðla</h3>
             <time id="countdown">00:00:00</time>
           </div>
+          <div className={css.divider} />
           <div className={css.share}>
             <button
               type="button"
