@@ -79,28 +79,42 @@ export function inDictionary (word) {
 
 export function getTargetWord (seed) {
   const rng = mulberry32(seed);
+  // pick the number of vowels to use
   const numVowels = weightedPick([ 1, 2, 3 ], rng(), sylFreq);
+  // until we have a word selected...
   let word = null;
   while (!word) {
     const letters = [];
     let v0 = [ ...vowels ];
     let c0 = [ ...consonants ];
+    // pick 5 letters
     for (let i = 0; i < 5; i++) {
       let x;
+      // if we still need a vowel
       if (i < numVowels) {
+        // pick one and exclude from the pool
         x = weightedPick(v0, rng());
         v0 = v0.filter(d => d !== x);
       }
+      // if we have all vowels, we need a consonant
       else {
+        // pick one and exclude from the pool
         x = weightedPick(c0, rng(), letterFreq);
         c0 = c0.filter(d => d !== x);
       }
+      // add the letter to our selection
       letters.push(x.toLowerCase());
     }
-    const list = permutations(letters.join('')).filter(w => solutionWords.includes(w));
+    // create a list of all permutations of the letters
+    const list = permutations(letters.join(''))
+      // and filter it down to permitted words
+      .filter(w => solutionWords.includes(w));
+    // if there are valid words in the list
     if (list.length) {
+      // pick a random one
       word = list[Math.floor(rng() * list.length)];
     }
   }
+  // return the selected word
   return word.toUpperCase();
 }
